@@ -1,4 +1,4 @@
-
+// Nome: Gustavo Maxwel de Sousa Oliveira	Matr√≠cula: UC21101257
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -121,7 +121,7 @@ int main(){
 void le_valida_presid(char prtPre[], int tam){
 	
 	while(tam < 4 || tam > MAX_PRE){
-		printf("O nome n„o pode ser vazio e nem maior que 50:");
+		printf("O nome n√£o pode ser vazio e nem maior que 50:");
 		scanf("%[^\n]s", &(*prtPre));
 		
 		tam = strlen(prtPre);
@@ -133,20 +133,20 @@ void le_valida_id(Jogo jogo[], int index){
 	int unidadId = 0;
 	
 	do{
-		printf("Digite a identificaÁ„o do jogo (300 - 10.000):");
+		printf("Digite a identifica√ß√£o do jogo (300 - 10.000):");
 		scanf("%d", &jogo[index].id);
 		
 		for(unidadId; unidadId<index; unidadId++){
 			if(jogo[index].id == jogo[unidadId].id){
-				printf("Esta identificaÁ„o j· foi cadastrada!\n");
-				printf("Digite a identificaÁ„o do jogo (300 - 10.000):");
+				printf("Esta identifica√ß√£o j√° foi cadastrada!\n");
+				printf("Digite a identifica√ß√£o do jogo (300 - 10.000):");
 				scanf("%d", &jogo[index].id);
 			}
 			
 		}
 		
 		if(jogo[index].id<300 || jogo[index].id>10000){
-			printf("Este n˙mero n„o pode ser cadastrado, tente ente (300 - 10.000)\n");
+			printf("Este n√∫mero n√£o pode ser cadastrado, tente ente (300 - 10.000)\n");
 		}
 	}while(jogo[index].id<300 || jogo[index].id>10000);
 }
@@ -157,7 +157,7 @@ void le_valida_valor(Jogo jogo[], int index){
 		printf("Digite o valor arrecadado (1.000 - 1.000.000):");
 		scanf("%f", &jogo[index].valor);
 		if(jogo[index].valor < 1000 || jogo[index].valor > 1000000){
-			printf("Este valor n„o pode ser cadastrado, tente ente (1.000 - 1.000.000).\n");
+			printf("Este valor n√£o pode ser cadastrado, tente ente (1.000 - 1.000.000).\n");
 		}
 	}while(jogo[index].valor < 1000 || jogo[index].valor > 1000000);	
 }
@@ -256,15 +256,15 @@ void le_valida_consulta_jogos(Jogo jogo[], int index){
 		for(g; g < index; g++){
 			if(strcmp(jogo[g].cidade, Cidade)==0){
 				printf("\nCidade:%s - Identificador:%d - Valor Arrecadado:%.2f", jogo[g].cidade, jogo[g].id, jogo[g].valor);
-				else_do_if = 24; //numero aleatÛrio pq o else do if(linha 234) tem que estar fora do for. 
+				else_do_if = 24; //numero aleat√≥rio pq o else do if(linha 234) tem que estar fora do for. 
 			}
 		}
 		
 		if(else_do_if != 24){
-			printf("\nN„o encontrado\n. Dica: tente sem assento!");
+			printf("\nN√£o encontrado\n. Dica: tente sem assento!");
 		}
 		
-	}else printf("\nN„o h· jogos cadastrados. Cadastre um jogo primeiro!");
+	}else printf("\nN√£o h√° jogos cadastrados. Cadastre um jogo primeiro!");
 		
 }
 
